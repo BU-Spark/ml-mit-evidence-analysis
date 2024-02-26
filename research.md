@@ -41,3 +41,13 @@ A collection of summaries from various research papers and articles related to t
   - Provides insight into how AI is used in tools to combat human trafficking, discussing the use of NLPs and computer vision in this context.
 - **Note**: Helpful to understand the basics of the application of AI in this particular scenario.
 - **Sign**: Ilya Bulygin
+
+## 5. 
+
+- **Name**: Nurassyl Medeu
+- **Title**: DINOv2: Learning Robust Visual Features without Supervision
+- **Link**: [https://arxiv.org/pdf/2304.07193v2.pdf](https://arxiv.org/pdf/2304.07193v2.pdf)
+- **Summary**: 
+  - This paper discusses image classification in the context of visual features learned by the DINOv2 model. Specifically, it mentions training a linear classifier on top of the model's frozen features and testing it on datasets like iNaturalist and Places205. The results show that DINOv2 performs better than competing models.
+- **Note**: This paper generally talks about the approach to pretraining computer vision models using self-supervised learning methods, which can be useful for our project.
+- **Sign**: Nurassyl Medeu
