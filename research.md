@@ -42,7 +42,7 @@ A collection of summaries from various research papers and articles related to t
 - **Note**: Helpful to understand the basics of the application of AI in this particular scenario.
 - **Sign**: Ilya Bulygin
 
-## 5. 
+## 5. DINOv2: Learning Robust Visual Features without Supervision
 
 - **Name**: Nurassyl Medeu
 - **Title**: DINOv2: Learning Robust Visual Features without Supervision
