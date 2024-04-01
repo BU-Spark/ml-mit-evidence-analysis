@@ -1,0 +1,5 @@
+Source: https://github.com/wondonghyeon/face-classification?tab=readme-ov-file
+
+Instructions are provided on GitHub.
+
+NOTE: Modifications on `feature_extraction.ipynb`, `train.ipynb` and `pred.py` are made based on python and modules' version update. Please run these two Jupyter Notebook file for correct version of `face_model.pkl`.
