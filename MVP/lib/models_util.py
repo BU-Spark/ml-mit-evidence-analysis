@@ -45,7 +45,7 @@ def crop_feature(image, bbox):
 def load_models():
 
     # Load alcohol model
-    alcohol_model = tf.keras.models.load_model("models/alcohol/alcohol_model.keras")
+    #alcohol_model = tf.keras.models.load_model("models/alcohol/alcohol_model.keras")
 
     # Load SAM model
     sam_checkpoint = "models/segmentation/SAM_vit_model.pth"
@@ -74,4 +74,4 @@ def load_models():
         face_clf, face_labels = pickle.load(f)
 
 
-    return sam, knife_model, pistol_model, transform_pipeline, face_clf, face_labels, alcohol_model
+    return sam, knife_model, pistol_model, transform_pipeline, face_clf, face_labels
