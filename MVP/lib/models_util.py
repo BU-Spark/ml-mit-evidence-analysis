@@ -1,10 +1,13 @@
 import tensorflow as tf
 from models.segmentation.segment_anything import sam_model_registry, SamAutomaticMaskGenerator
 import pickle
+import os
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torchvision import transforms
+from mmengine.config import Config
+from mmdet.apis import init_detector, inference_detector
 
 class SimpleCNN(nn.Module):
     def __init__(self, num_classes):
@@ -48,9 +51,11 @@ def load_models():
     #alcohol_model = tf.keras.models.load_model("models/alcohol/alcohol_model.keras")
 
     # Load SAM model
+    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     sam_checkpoint = "models/segmentation/SAM_vit_model.pth"
     model_type = "vit_h"
     sam = sam_model_registry[model_type](checkpoint=sam_checkpoint)
+    sam.to(device=device)
     sam = SamAutomaticMaskGenerator(sam)
 
     # Load knife model (98% accuracy)
@@ -60,6 +65,14 @@ def load_models():
     # Load knife model (97% accuracy)
     with open('models/weapon/pistol_model.pt', 'rb') as file:
         pistol_model = torch.load(file, map_location='cpu')
+
+    #Load blood model
+    config_file = 'models/blood/mmdetection/configs/faster_rcnn/faster-rcnn_r50_fpn_1x_coco.py'
+    checkpoint_file = 'models/blood/latest.pth'
+    cfg = Config.fromfile(config_file)
+    cfg.model.roi_head.bbox_head.num_classes = 6 
+    assert os.path.isfile(checkpoint_file), f"Checkpoint file not found at {checkpoint_file}"
+    blood_model = init_detector(cfg, checkpoint_file, device=device)
 
     # Define the transformation pipeline
     transform_pipeline = transforms.Compose([
@@ -74,4 +87,4 @@ def load_models():
         face_clf, face_labels = pickle.load(f)
 
 
-    return sam, knife_model, pistol_model, transform_pipeline, face_clf, face_labels
+    return sam, knife_model, pistol_model, transform_pipeline, face_clf, face_labels,blood_model

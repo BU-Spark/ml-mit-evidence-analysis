@@ -11,13 +11,14 @@ from lib.output_util import *
 from models.alcohol.alcohol_model import get_prediction_alcohol
 from models.weapon.weapon_model import classify_knife, classify_pistol
 from models.face.face_model import classify_face
+from models.blood.blood_detection import blood_classifier
 
 
 
-classes = ["Knife", "Pistol", "Alcohol", "Male", "Female", "Asian", "White", "Black"]
+classes = ["knife", "pistol", "alcohol", "male", "female", "asian", "white", "black","blood"]
 
 # loading models
-segmentation_model, knife_model, pistol_model, transform_pipeline, face_clf, face_labels, alcohol_model= load_models()
+segmentation_model, knife_model, pistol_model, transform_pipeline, face_clf, face_labels,blood_model = load_models()
 
 def main(directory):
 
@@ -52,8 +53,11 @@ def main(directory):
         for cl in classes:
             labels[cl] = False
 
+        print("Now we start the segmentation.")
+
         # segmenting the image into objects
         bbox_list = segment(image, segmentation_model)
+        print("Now segmentation finished.")
 
         # iterating through all the objects
         for ind, bbox in enumerate(bbox_list):
@@ -66,19 +70,22 @@ def main(directory):
                     cv2.imwrite("cropped_pistol.jpg", cropped_image)
 
                 if cropped_image is not None:
-                    has_alcohol = get_prediction_alcohol(image, alcohol_model)
+                    #has_alcohol = get_prediction_alcohol(image, alcohol_model)
                     has_pistol = classify_pistol(cropped_image, pistol_model, transform_pipeline)
                     has_knife = classify_knife(cropped_image, knife_model, transform_pipeline)
                     image_gender, image_race = classify_face(cropped_image, face_clf, face_labels)
+                    has_blood = blood_classifier(cropped_image,blood_model,transform_pipeline)
 
                     if has_knife:
                         labels["knife"] = True
                     if has_pistol:
                         labels["pistol"] = True
-                    if has_alcohol:
-                        labels["alcohol"] = True
+                    #if has_alcohol:
+                        ##labels["alcohol"] = True
                     labels[image_gender] = True
                     labels[image_race] = True
+                    if has_blood:
+                        labels["blood"] = True
 
             except Exception as e:
                 # if an error occurred during cropping, skip this mask and continue
@@ -86,7 +93,14 @@ def main(directory):
 
         for cl in labels:
             if labels[cl]:
-                shutil.copy(os.path.join(directory, filename), os.path.join(directory, "results/" + cl))
+                if cl is None:
+                    print("Label is None, skipping.")
+                    continue
+                target_folder = os.path.join(directory, "results", cl)
+                if not os.path.exists(target_folder):
+                    os.makedirs(target_folder)
+                shutil.copy(os.path.join(directory, filename), os.path.join(target_folder, filename))
+
 
     if non_image_files:
         print("\nSummary of non-image or corrupted files:")
