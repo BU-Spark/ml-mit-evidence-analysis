@@ -17,7 +17,7 @@ At the end of the semester during project wrap up open a final Pull Request to m
 
 ## Project Architecture
 
-<img src="resources/structure.png">
+<img src="structure.png">
 
 ## Proof of Concept
 
