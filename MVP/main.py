@@ -109,4 +109,4 @@ def main(directory):
     else:
         print("\nAll files were successfully processed.")
 
-main("sample_images")
+main("input")
