@@ -34,7 +34,7 @@ git clone https://github.com/BU-Spark/ml-mit-evidence-analysis.git
 1. Clone the repo
 2. Install the pre-trained models from [here](https://drive.google.com/drive/u/1/folders/1w0zNPWbahkFEmBiexCbiwHZe9Yd0uCgk)
 3. For the blood detection model, download the mmdetection folder from [here](https://drive.google.com/drive/u/1/folders/1w0zNPWbahkFEmBiexCbiwHZe9Yd0uCgk) or follow the environment settting part in MVP/models/blood/blood_detection.ipynb.
-4. Place each pre-trained model into respective folder in /ml-mit-evidence-analysis/MVP/models/[RESPECTIVE MODEL FOLDER]
+4. Place each pre-trained model into its respective folder in /ml-mit-evidence-analysis/MVP/models/[RESPECTIVE MODEL FOLDER]
 5. Place input images into /ml-mit-evidence-analysis/MVP/sample_images
 6. Run main.py by running ```python main.py``` in ```MVP``` folder.
 7. Get model outputs in /ml-mit-evidence-analysis/MVP/sample_images/results
@@ -53,20 +53,20 @@ All models can be downloaded from [here](https://drive.google.com/drive/u/1/fold
 
 ## Proof of Concept
 
-This folder contains all Jupyter Notebooks for individual models training.
+This folder contains all Jupyter Notebooks for individual model training.
 - ```ImageSegmentation``` folder contains Segment Anything Model (**SAM**) from Meta. This model is used for input image segmentation.
 - ```face_classification``` folder contains **race** and **gender** classification model.
-    - Original face classificaton repo can be found here [face-classification](https://github.com/wondonghyeon/face-classification)
-    - Our face classification model has modified some training codes due to python version differences. Please consider using the training code as need.
-- ```selfie``` folder contains facial feature classification model.
-    - This model is not embedded in the filal deliverables, since the accuracy is not ideal. Further training on different dataset may have significant improvement on the model.
-- ```Blood_detection(FasterCNN).ipynb``` file aims for FasterRCNN model training on blood detection. It can work individually but have different envrionment requirement from other models. The model with the same envrionment as other models is in the MVP/models/blood/blood_detection.ipynb.  Original github repo can be found here [HOD-Benchmark-Dataset](https://github.com/poori-nuna/HOD-Benchmark-Dataset/tree/main)
-- ```HumanCharacterModel.ipynb``` file aims for
-- ```Weapon.ipynb``` file aims for **knife** and **pistol** model training. Several approaches are applied regarding high accuracy model production.
+    - The original face classification repo can be found here [face-classification](https://github.com/wondonghyeon/face-classification)
+    - Our face classification model has modified some training codes due to Python version differences. Please consider using the training code as needed.
+- The ```selfie``` folder contains the facial feature classification model.
+    - This model is not embedded in the final deliverables since the accuracy is not ideal. Further training on different datasets may significantly improve the model.
+- ```Blood_detection(FasterCNN).ipynb``` file aims for FasterRCNN model training on blood detection. It can work individually but have different environmental requirements from other models. The model with the same environment as other models is in the MVP/models/blood/blood_detection.ipynb.  The original GitHub repo can be found here [HOD-Benchmark-Dataset](https://github.com/poori-nuna/HOD-Benchmark-Dataset/tree/main)
+- ```HumanCharacterModel.ipynb``` file is a model that classifies human faces as savory or unsavory. The Savory class includes images of "ordinary" people, while the Unsavory class includes facial images of convicted felons. The model is trained based on the ResNet152V2 model with 98% accuracy on the test dataset. The original model and dataset can be found [here](https://www.kaggle.com/code/utkarshsaxenadn/human-character-recognition-resnet152v2-f1-96). This model is not used in the final product; however, it could potentially be useful in future updates.
+- ```Weapon.ipynb``` file aims for **knife** and **pistol** model training. Several approaches are applied regarding high-accuracy model production.
   - Self defined ```CNN``` model was selected with highest accuracy (98%), but comes with a problem of overfitting. This model is a binary detection model, without relativity percentage functionality.
   - ```YOLOv8n``` pretrained model are tesed and specialized with knife and pistol detection, but only reaches accuracy around 60%.
-        - knife.yaml file for knife dataset can be found [here](https://drive.google.com/drive/u/1/folders/1qqBHAOiLvLZebG4Ss23rq30j9ELt3rKY)
-        - More YOLOv8 pretrained models can be downloaded [here](https://docs.ultralytics.com/tasks/detect/#models)
+        - knife.yaml file for the knife dataset can be found [here](https://drive.google.com/drive/u/1/folders/1qqBHAOiLvLZebG4Ss23rq30j9ELt3rKY)
+        - More YOLOv8 pre-trained models can be downloaded [here](https://docs.ultralytics.com/tasks/detect/#models)
   - ```MMDetection``` toolbox are utilized, with [```faster_rcnn```](https://drive.google.com/drive/u/1/folders/1qqBHAOiLvLZebG4Ss23rq30j9ELt3rKY) model tested but not spcialy trained for weapon detection. Further work can be done here with the purpose of model specialization.
 - ```alcohol_model.ipynb``` file aims for **alcohol** detection. 
 
