@@ -69,3 +69,11 @@ This folder contains all Jupyter Notebooks for individual models training.
         - More YOLOv8 pretrained models can be downloaded [here](https://docs.ultralytics.com/tasks/detect/#models)
   - ```MMDetection``` toolbox are utilized, with [```faster_rcnn```](https://drive.google.com/drive/u/1/folders/1qqBHAOiLvLZebG4Ss23rq30j9ELt3rKY) model tested but not spcialy trained for weapon detection. Further work can be done here with the purpose of model specialization.
 - ```alcohol_model.ipynb``` file aims for **alcohol** detection. 
+
+
+### Datasets Used in Project Development
+- [Hotels-50k](https://paperswithcode.com/dataset/hotels-50k)
+- [COCO-O](https://paperswithcode.com/dataset/coco-o)
+- [Weapon Detection](https://github.com/ari-dasci/OD-WeaponDetection)
+- [HOD Benchmark Dataset](https://github.com/poori-nuna/HOD-Benchmark-Dataset)
+- [Selfie Dataset](https://www.crcv.ucf.edu/data/Selfie/)
