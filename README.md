@@ -65,8 +65,8 @@ This folder contains all Jupyter Notebooks for individual model training.
 - ```Weapon.ipynb``` file aims for **knife** and **pistol** model training. Several approaches are applied regarding high-accuracy model production.
   - Self defined ```CNN``` model was selected with highest accuracy (98%), but comes with a problem of overfitting. This model is a binary detection model, without relativity percentage functionality.
   - ```YOLOv8n``` pretrained model are tesed and specialized with knife and pistol detection, but only reaches accuracy around 60%.
-        - knife.yaml file for the knife dataset can be found [here](https://drive.google.com/drive/u/1/folders/1qqBHAOiLvLZebG4Ss23rq30j9ELt3rKY)
-        - More YOLOv8 pre-trained models can be downloaded [here](https://docs.ultralytics.com/tasks/detect/#models)
+    - knife.yaml file for the knife dataset can be found [here](https://drive.google.com/drive/u/1/folders/1qqBHAOiLvLZebG4Ss23rq30j9ELt3rKY)
+    - More YOLOv8 pre-trained models can be downloaded [here](https://docs.ultralytics.com/tasks/detect/#models)
   - ```MMDetection``` toolbox are utilized, with [```faster_rcnn```](https://drive.google.com/drive/u/1/folders/1qqBHAOiLvLZebG4Ss23rq30j9ELt3rKY) model tested but not spcialy trained for weapon detection. Further work can be done here with the purpose of model specialization.
 - ```alcohol_model.ipynb``` file aims for **alcohol** detection. 
 
