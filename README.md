@@ -68,7 +68,7 @@ This folder contains all Jupyter Notebooks for individual model training.
     - knife.yaml file for the knife dataset can be found [here](https://drive.google.com/drive/u/1/folders/1qqBHAOiLvLZebG4Ss23rq30j9ELt3rKY)
     - More YOLOv8 pre-trained models can be downloaded [here](https://docs.ultralytics.com/tasks/detect/#models)
   - ```MMDetection``` toolbox are utilized, with [```faster_rcnn```](https://drive.google.com/drive/u/1/folders/1qqBHAOiLvLZebG4Ss23rq30j9ELt3rKY) model tested but not spcialy trained for weapon detection. Further work can be done here with the purpose of model specialization.
-- ```alcohol_model.ipynb``` file aims for **alcohol** detection. 
+- ```alcohol_model.ipynb``` file aims for **alcohol** detection. The ```alcohol_model``` notebook focuses on training a machine learning model using the ```MobileNetV2``` architecture to identify images with alcohol-related content by distinguishing between "alcohol" and "non-alcohol" categories. It employs a diverse dataset split into normal and hard cases to ensure robustness. The model leverages the pre-trained features of ```MobileNetV2```, whose base layers are frozen to facilitate rapid and efficient training, while the top layers are customized for alcohol detection. Data augmentation techniques like rotation, zoom, and horizontal flipping are utilized to enhance the model's generalization across varied real-world scenarios, promoting accuracy and versatility in detecting alcohol-related images under different conditions.
 
 
 ### Datasets Used in Project Development
