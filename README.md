@@ -33,10 +33,11 @@ git clone https://github.com/BU-Spark/ml-mit-evidence-analysis.git
 ### Setup
 1. Clone the repo
 2. Install the pre-trained models from [here](https://drive.google.com/drive/u/1/folders/1w0zNPWbahkFEmBiexCbiwHZe9Yd0uCgk)
-3. Place each pre-trained model into respective folder in /ml-mit-evidence-analysis/MVP/models/[RESPECTIVE MODEL FOLDER]
-4. Place input images into /ml-mit-evidence-analysis/MVP/sample_images
-5. Run main.py by running ```python main.py``` in ```MVP``` folder.
-6. Get model outputs in /ml-mit-evidence-analysis/MVP/sample_images/results
+3. For the blood detection model, download the mmdetection folder from [here](https://drive.google.com/drive/u/1/folders/1w0zNPWbahkFEmBiexCbiwHZe9Yd0uCgk) or follow the environment settting part in MVP/blood/blood_detection.ipynb.
+4. Place each pre-trained model into respective folder in /ml-mit-evidence-analysis/MVP/models/[RESPECTIVE MODEL FOLDER]
+5. Place input images into /ml-mit-evidence-analysis/MVP/sample_images
+6. Run main.py by running ```python main.py``` in ```MVP``` folder.
+7. Get model outputs in /ml-mit-evidence-analysis/MVP/sample_images/results
 
 ### Input Restriction
 
