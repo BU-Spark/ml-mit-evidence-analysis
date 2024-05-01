@@ -10,10 +10,41 @@ At the end of the semester during project wrap up open a final Pull Request to m
 
 **Team member: Ilya Bulygin, Nurassyl Medeu, Jiawei Sun, Qinghui Zhu**
 
-## Environment Requirements
+## MVP
+
+### Introduction
+
+This folder contains complete final deliverable. Input images will be segmented, filtered, then passed into recognization model. After evaluation, output of each model will be combined and used for labeling and classification. All images will eventually be classified into different folders in ```results``` folder.
+
+Currently supported classification types are: ```knife```, ```pistol```, ```alcohol```, ```male```, ```female```, ```asian```, ```white```, ```black```, ```blood```.
+
+For the blood detection model, please follow the environment setting part in the blood_detection.ipynb. The files in mmdetection failed to upload to Github so it needs to be installed by code.
+
+### Environment Requirements
 - Python version: 3.11.1
 - Modules requirements: requirements.txt
 - To install all modules, please run ```pip install -r requirements.txt```
+
+### Installation
+```
+git clone https://github.com/BU-Spark/ml-mit-evidence-analysis.git
+```
+
+### Setup
+1. Clone the repo
+2. Install the pre-trained models from [here](https://drive.google.com/drive/u/1/folders/1w0zNPWbahkFEmBiexCbiwHZe9Yd0uCgk)
+3. Place each pre-trained model into respective folder in /ml-mit-evidence-analysis/MVP/models/[RESPECTIVE MODEL FOLDER]
+4. Place input images into /ml-mit-evidence-analysis/MVP/sample_images
+5. Run main.py by running ```python main.py``` in ```MVP``` folder.
+6. Get model outputs in /ml-mit-evidence-analysis/MVP/sample_images/results
+
+### Input Restriction
+
+Currently, only ```png```, ```jpeg```, ```jpg``` image types are supported. After collecting images, put all into a folder under ```MVP``` folder for classification.
+
+### Models
+
+All models can be downloaded from [here](https://drive.google.com/drive/u/1/folders/1w0zNPWbahkFEmBiexCbiwHZe9Yd0uCgk)
 
 ## Project Architecture
 
@@ -37,24 +68,3 @@ This folder contains all Jupyter Notebooks for individual models training.
         - More YOLOv8 pretrained models can be downloaded [here](https://docs.ultralytics.com/tasks/detect/#models)
   - ```MMDetection``` toolbox are utilized, with [```faster_rcnn```](https://drive.google.com/drive/u/1/folders/1qqBHAOiLvLZebG4Ss23rq30j9ELt3rKY) model tested but not spcialy trained for weapon detection. Further work can be done here with the purpose of model specialization.
 - ```alcohol_model.ipynb``` file aims for **alcohol** detection. 
-
-## MVP
-
-### Introduction
-
-This folder contains complete final deliverable. Input images will be segmented, filtered, then passed into recognization model. After evaluation, output of each model will be combined and used for labeling and classification. All images will eventually be classified into different folders in ```results``` folder.
-
-Currently supported classification types are: ```knife```, ```pistol```, ```alcohol```, ```male```, ```female```, ```asian```, ```white```, ```black```, ```blood```.
-
-For the blood detection model, please follow the environment setting part in the blood_detection.ipynb. The files in mmdetection failed to upload to Github so it needs to be installed by code.
-
-### Input Restriction
-
-Currently, only ```png```, ```jpeg```, ```jpg``` image types are supported. After collecting images, put all into a folder under ```MVP``` folder for classification.
-
-### Launch Program
-To launch program, run ```python main.py``` in ```MVP``` folder.
-
-## Models
-
-All models can be downloaded from [here](https://drive.google.com/drive/u/1/folders/1w0zNPWbahkFEmBiexCbiwHZe9Yd0uCgk)
