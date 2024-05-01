@@ -28,7 +28,7 @@ This folder contains all Jupyter Notebooks for individual models training.
     - Our face classification model has modified some training codes due to python version differences. Please consider using the training code as need.
 - ```selfie``` folder contains facial feature classification model.
     - This model is not embedded in the filal deliverables, since the accuracy is not ideal. Further training on different dataset may have significant improvement on the model.
-- ```Blood_detection(FasterCNN).ipynb``` file aims for FasterCNN model training on blood detection. Original github repo can be found here [HOD-Benchmark-Dataset](https://github.com/poori-nuna/HOD-Benchmark-Dataset/tree/main)
+- ```Blood_detection(FasterCNN).ipynb``` file aims for FasterRCNN model training on blood detection. It can work individually but have different envrionment requirement from other models. The new environment setting that is same as other model is in the MVP/blood/blood_detection.ipynb.  Original github repo can be found here [HOD-Benchmark-Dataset](https://github.com/poori-nuna/HOD-Benchmark-Dataset/tree/main)
 - ```HumanCharacterModel.ipynb``` file aims for
 - ```Weapon.ipynb``` file aims for **knife** and **pistol** model training. Several approaches are applied regarding high accuracy model production.
   - Self defined ```CNN``` model was selected with highest accuracy (98%), but comes with a problem of overfitting. This model is a binary detection model, without relativity percentage functionality.
@@ -45,6 +45,8 @@ This folder contains all Jupyter Notebooks for individual models training.
 This folder contains complete final deliverable. Input images will be segmented, filtered, then passed into recognization model. After evaluation, output of each model will be combined and used for labeling and classification. All images will eventually be classified into different folders in ```results``` folder.
 
 Currently supported classification types are: ```knife```, ```pistol```, ```alcohol```, ```male```, ```female```, ```asian```, ```white```, ```black```, ```blood```.
+
+For the blood detection model, please follow the environment setting part in the blood_detection.ipynb. The files in mmdetection failed to upload to Github so it needs to be installed by code.
 
 ### Input Restriction
 
