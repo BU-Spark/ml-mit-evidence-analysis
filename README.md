@@ -33,7 +33,7 @@ git clone https://github.com/BU-Spark/ml-mit-evidence-analysis.git
 ### Setup
 1. Clone the repo
 2. Install the pre-trained models from [here](https://drive.google.com/drive/u/1/folders/1w0zNPWbahkFEmBiexCbiwHZe9Yd0uCgk)
-3. For the blood detection model, download the mmdetection folder from [here](https://drive.google.com/drive/u/1/folders/1w0zNPWbahkFEmBiexCbiwHZe9Yd0uCgk) or follow the environment settting part in MVP/blood/blood_detection.ipynb.
+3. For the blood detection model, download the mmdetection folder from [here](https://drive.google.com/drive/u/1/folders/1w0zNPWbahkFEmBiexCbiwHZe9Yd0uCgk) or follow the environment settting part in MVP/models/blood/blood_detection.ipynb.
 4. Place each pre-trained model into respective folder in /ml-mit-evidence-analysis/MVP/models/[RESPECTIVE MODEL FOLDER]
 5. Place input images into /ml-mit-evidence-analysis/MVP/sample_images
 6. Run main.py by running ```python main.py``` in ```MVP``` folder.
@@ -60,7 +60,7 @@ This folder contains all Jupyter Notebooks for individual models training.
     - Our face classification model has modified some training codes due to python version differences. Please consider using the training code as need.
 - ```selfie``` folder contains facial feature classification model.
     - This model is not embedded in the filal deliverables, since the accuracy is not ideal. Further training on different dataset may have significant improvement on the model.
-- ```Blood_detection(FasterCNN).ipynb``` file aims for FasterRCNN model training on blood detection. It can work individually but have different envrionment requirement from other models. The model with the same envrionment as other models is in the MVP/blood/blood_detection.ipynb.  Original github repo can be found here [HOD-Benchmark-Dataset](https://github.com/poori-nuna/HOD-Benchmark-Dataset/tree/main)
+- ```Blood_detection(FasterCNN).ipynb``` file aims for FasterRCNN model training on blood detection. It can work individually but have different envrionment requirement from other models. The model with the same envrionment as other models is in the MVP/models/blood/blood_detection.ipynb.  Original github repo can be found here [HOD-Benchmark-Dataset](https://github.com/poori-nuna/HOD-Benchmark-Dataset/tree/main)
 - ```HumanCharacterModel.ipynb``` file aims for
 - ```Weapon.ipynb``` file aims for **knife** and **pistol** model training. Several approaches are applied regarding high accuracy model production.
   - Self defined ```CNN``` model was selected with highest accuracy (98%), but comes with a problem of overfitting. This model is a binary detection model, without relativity percentage functionality.
